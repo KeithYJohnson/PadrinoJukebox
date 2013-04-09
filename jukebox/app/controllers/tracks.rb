@@ -20,7 +20,7 @@ Jukebox::App.controllers :tracks do
   # end
   
   get :play do
-
+    render 'tracks/play'
   end
 
   get :index do
@@ -34,7 +34,7 @@ Jukebox::App.controllers :tracks do
     client = Soundcloud.new(:client_id => 'a6efaa9c5cc3dd3790f3adbfdd332df1')
     @tracks =  client.get('/tracks', :q => "#{params[:id]}")
 
-    render 'tracks/index'
+    render 'tracks/index' 
 
 
 

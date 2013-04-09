@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> Search for a song bia</title>
+	</head>
+
+	<body>
+
+		<h1> What song would you like to search for</h1>
+
+		<div>
+			<% form_tag url_for(:tracks, :search) do %>
+				<p>
+					<%= label_tag :id %>
+					<%= text_field_tag :id %>
+				</p>
+				<%= submit_tag %>
+			
+			<% end %>	
+		</div>
+
+		<div>
+			<% for i in @tracks do %>
+				<li> <%= i["title"] %></li>
+			<% end %> 
+		</div>
+
+
+	</body>
+
+</html>
